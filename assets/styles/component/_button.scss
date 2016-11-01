@@ -1,0 +1,26 @@
+.btn-origin {
+	color: $red;
+	border: 1px solid $red;
+	background-color: transparent;
+}
+.btn-fill {
+	color: $white;
+	border: 1px solid $red;
+	background-color: $red;
+}
+
+.btn-theme {
+	@extend .btn-origin;
+	&:focus,
+	&:hover {
+		@extend .btn-fill;
+	}
+}
+.btn-theme-fill {
+	@extend .btn-fill;
+	&:focus,
+	&:hover {
+		@extend .btn-fill;
+		@include grayscale(30%);
+	}
+}

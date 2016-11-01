@@ -1,0 +1,13 @@
+#top-header {
+	padding-top: 10px;
+	background-color: #eee;
+}
+
+@media (max-width: 480px) {
+	#top-header {
+		text-align: center;
+		.pull-right {
+			float: none!important;
+		}
+	}
+}

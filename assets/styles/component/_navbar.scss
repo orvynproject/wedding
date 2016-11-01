@@ -1,0 +1,61 @@
+#sticky-wrapper {
+	nav {
+		z-index: 10!important;
+	}
+}
+
+.navbar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@include border-radius(0);
+	@include box-shadow(0 2px 8px 0px $red);
+	background-color: $white;
+	margin-bottom: 0;
+	z-index: 5;
+	.navbar-header {
+		.navbar-brand {
+			margin-top: -15px;
+			font-weight: bold;
+			color: $red;
+			img {
+				width: 50px;
+				display: inline;
+			}
+		}
+	}
+	.navbar-nav {
+		.active {
+			a {
+				background-color: transparent;
+				color: $red;
+				&:focus,
+				&:hover {
+					background-color: transparent;
+					color: $red;
+					@include grayscale(30%);
+				}
+			}
+		}
+		.btn-theme-fill {
+			color: $white;
+			&:focus,
+			&:hover {
+				@extend .btn-fill;
+				@include grayscale(30%);
+			}
+		}
+	}
+	.navbar-toggle {
+		border: none;
+		&:focus,
+		&:hover {
+			background-color: transparent;
+		}
+		.icon-bar {
+			background-color: $red;
+		}
+	}
+	.navbar-collapse.collapse.in {
+		margin-top: 20px;
+	}
+}
