@@ -2,6 +2,8 @@ html, body {
 	height: 100%;
 	@include transition(.5s);
 	font-family: $font-primary;
+	font-size:18px;
+	line-height:1.6;
 }
 
 ::-webkit-scrollbar {

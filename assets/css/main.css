@@ -32,7 +32,7 @@
     font-weight: bold;
     color: #EF1808;
     font-family: "Dancing Script", cursive;
-    font-size: 2em; }
+    font-size: 1.5em; }
     .navbar .navbar-header .navbar-brand img {
       width: 50px;
       display: inline; }
@@ -98,7 +98,9 @@ html, body {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  font-family: "Fira Sans", sans-serif; }
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.6; }
 
 ::-webkit-scrollbar {
   width: 5px; }
