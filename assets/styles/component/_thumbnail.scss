@@ -1,0 +1,43 @@
+.thumbnail {
+	@include border-radius(0);
+	padding: 0;
+	position: relative;
+	.pricing-header {
+		padding: 10px 0 20px;
+		background-color: $black;
+		.pricing-title {
+			font-size: 24px;
+			color: $white;
+		}
+		.price {
+			color: $white;
+			.currency {vertical-align: top}
+			.value {
+				font-size: 72px;
+				font-weight: bold;
+			}
+			.duration {vertical-align: bottom}
+		}
+	}
+	.pricing-header.bg-inner {
+		@extend .bg-inner;
+	}
+	.pricing-body {
+		padding: 20px 0 20px;
+		background-color: $white;
+	}
+}
+
+.bg-light {
+	.thumbnail {
+		background-color: #eee;
+	}
+}
+
+#package {
+	.thumbnail {
+		&:hover {
+			@include box-shadow(0 0 15px 5px #ccc);
+		}
+	}
+}

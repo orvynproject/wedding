@@ -31,6 +31,53 @@ a {
 	}
 }
 
+section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+section.bg-inner {
+	background-color: #eee;
+}
+
+hr.heart-primary {
+	padding: 0;
+    border: none;
+    border-top: 2px solid $red;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+    &:after {
+    	background-color: $white;
+    	color: $red;
+    	content: "\f004";
+		font-family: FontAwesome;
+		display: inline-block;
+		position: relative;
+		top: -.8em;
+		font-size: 2em;
+		padding: 0 .25em;
+    }
+}
+hr.heart-inner {
+	padding: 0;
+    border: none;
+    border-top: 2px solid $red;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+    &:after {
+    	background-color: #eee;
+    	color: $red;
+    	content: "\f004";
+		font-family: FontAwesome;
+		display: inline-block;
+		position: relative;
+		top: -.8em;
+		font-size: 2em;
+		padding: 0 .25em;
+    }
+}
+
 .preload {
 	position: fixed;
 	width: 100%;
@@ -44,8 +91,30 @@ a {
 	background-repeat: no-repeat;
 }
 
+.title {
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.no-padding {
+	padding: 0;
+}
+.no-border {
+	border: none;
+}
+
 .sosmed {
 	li {
 		background-color: $white;
 	}
+}
+
+#map {
+	height: 100%;
+}
+
+.bg-inner {
+	background-color: $black-light;
 }

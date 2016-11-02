@@ -24,3 +24,7 @@
 		@include grayscale(30%);
 	}
 }
+
+.btn-flat {
+	@include border-radius(0);
+}
