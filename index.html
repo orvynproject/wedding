@@ -103,9 +103,9 @@
 		</header>
 
 		<section id="service" class="bg-light">
+			<div class="flowers"></div>
 			<div class="container">
 				<h1 class="title">Our Services</h1>
-				<hr class="heart-primary">
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="thumbnail text-center no-border">
@@ -141,15 +141,16 @@
 			</div>
 		</section>
 
-		<section id="package" class="bg-inner">
+		<section id="package" class="bg-image">
+			<div class="flowers"></div>
 			<div class="container">
 				<h1 class="title">Package</h1>
-				<hr class="heart-inner">
+				<br>
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="thumbnail no-padding no-border">
 							<div class="pricing-header text-center bg-inner">
-								<p class="pricing-title">Wisuda</p>
+								<p class="pricing-title"><i class="fa fa-graduation-cap"></i> Wisuda</p>
 								<div class="price">
 									<span class="currency">IDR</span>
 									<span class="value">250</span>
@@ -164,15 +165,12 @@
 									<li><span>Antar sampai tujuan</span></li>
 								</ul>
 							</div>
-							<div class="pricing-footer text-center">
-								<a href="javascript:;" class="btn btn-flat btn-lg btn-block btn-theme-fill">Select &rarr;</a>
-							</div>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="thumbnail no-padding no-border">
 							<div class="pricing-header text-center">
-								<p class="pricing-title">Wedding</p>
+								<p class="pricing-title"><i class="fa fa-diamond"></i> Wedding</p>
 								<div class="price">
 									<span class="currency">IDR</span>
 									<span class="value">25</span>
@@ -206,15 +204,12 @@
 									<li><span>2 Pundi Uang</span></li>
 								</ul>
 							</div>
-							<div class="pricing-footer text-center">
-								<a href="javascript:;" class="btn btn-flat btn-lg btn-block btn-theme-fill">Select &rarr;</a>
-							</div>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="thumbnail no-padding no-border">
 							<div class="pricing-header text-center bg-inner">
-								<p class="pricing-title">Pre-Wedding</p>
+								<p class="pricing-title"><i class="fa fa-camera"></i> Pre-Wedding</p>
 								<div class="price">
 									<span class="currency">IDR</span>
 									<span class="value">1,5</span>
@@ -229,9 +224,6 @@
 									<li><span>Softcopy + Cetak 4R</span></li>
 								</ul>
 							</div>
-							<div class="pricing-footer text-center">
-								<a href="javascript:;" class="btn btn-flat btn-lg btn-block btn-theme-fill">Select &rarr;</a>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -242,7 +234,7 @@
 
 		<footer>
 			<div class="container">
-				<span>&copy; 2016 <a href="index.html">Our Wedding</a>.</span>
+				<span>&copy; 2016 <a href="index.html">The Wedding</a>.</span>
 				<span>All rights reserved.</span>
 				<span class="pull-right">Site by <a href="https://www.instagram.com/orvynproject/" class="developer" target="_blank">OP</a></span>
 			</div>
@@ -256,6 +248,7 @@
 			var map;
 			function initMap() {
 				var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+
 				var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
 				var mapOptions = {
 					zoom: 17,
@@ -267,8 +260,31 @@
 				var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 				map.mapTypes.set('map_style', styledMap);
 				map.setMapTypeId('map_style');
+
+				var iconBase = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/64/';
+				var icons = {
+					info: {
+						icon: iconBase + 'map-marker-icon.png'
+					}
+				};
+				function addMarker(feature) {
+					var marker = new google.maps.Marker({
+						position: feature.position,
+						icon: icons[feature.type].icon,
+						map: map
+					});
+				}
+				var features = [
+					{
+						position: new google.maps.LatLng(-7.8158000, 112.0621917),
+						type: 'info'
+					}
+				];
+				for (var i = 0, feature; feature = features[i]; i++) {
+					addMarker(feature);
+				}
 			}
 		</script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFR-7y865H65NO3aN9KpoZOjnSJy3ZLYE&callback=initMap" async defer></script>
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFR-7y865H65NO3aN9KpoZOjnSJy3ZLYE&callback=initMap" async defer></script> -->
 	</body>
 </html>

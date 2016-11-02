@@ -30,14 +30,15 @@
 
 .bg-light {
 	.thumbnail {
-		background-color: #eee;
+		background-color: transparent;
 	}
 }
 
 #package {
 	.thumbnail {
+		@include transition(.5s);
 		&:hover {
-			@include box-shadow(0 0 15px 5px #ccc);
+			@include box-shadow(0 0 15px 5px $black);
 		}
 	}
 }

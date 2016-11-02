@@ -14,6 +14,14 @@
 	filter: grayscale($val);
 }
 
+@mixin contrast($val) {
+	-webkit-filter: contrast($val);
+	-moz-filter: contrast($val);
+	-ms-filter: contrast($val);
+	-o-filter: contrast($val);
+	filter: contrast($val);
+}
+
 @mixin transition($val) {
 	-webkit-transition: $val;
 	-moz-transition: $val;
@@ -36,4 +44,12 @@
 	-ms-box-shadow: $val;
 	-o-box-shadow: $val;
 	box-shadow: $val;
+}
+
+@mixin rotate($val) {
+	-webkit-transform: rotate($val);
+	-moz-transform: rotate($val);
+	-ms-transform: rotate($val);
+	-o-transform: rotate($val);
+	transform: rotate($val);
 }
